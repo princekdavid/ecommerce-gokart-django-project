@@ -130,6 +130,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# static files configuration
 STATICFILES_DIRS =[
     BASE_DIR , "static"
 ]
@@ -146,3 +147,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR /'media'
+
+# django messages configuuration
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+}
+# import json
+# SMTP configuraion
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = "django.core.mail.backends.gmail_smtp.GmailBackend"
+# GMAIL_SERVICE_KEY =  json.load(open('gokart-424015-42e780efeb23.json'))
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TSL = True
